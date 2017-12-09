@@ -12,11 +12,11 @@
     <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='main.css'>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <title>Github Stalker</title>
+    <title>Github Push Commit Reader</title>
   </head>
   <body>
   <div id="core">
-    <h2>What Have I Been Up To?</h2>
+    <h2>Hello Mr Anderson these are your last 10 git pushes</h2>
     <form action="index.jsp" method="GET">
       <div class="form-group">
         <label for="user"><h3>Github username:</h3></label>
@@ -39,7 +39,7 @@
       <%if (user != null && !user.isEmpty()){%>
           <%=GithubQuerier.eventsAsHTML(user)%>
         <% } else { %>
-            Tell me who you are, and I will tell you what you did last ... week? Month? Summer? Not sure yet.
+            Tell me who you are, and I will tell you your last 10 git pushes.
         <% }%>
     </div>
   </div>
